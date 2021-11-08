@@ -11,7 +11,7 @@ const talentos = [{
 const lista = document.querySelector('[data-list]')
 const tarefa = document.createElement('li')
 tarefa.classList.add('task')
-const conteudo = `<p class="content">${talentos.nome}</p>`
+const conteudo = `<p class="content">${talentos}</p>`
 tarefa.innerHTML = conteudo
 
 lista.appendChild(tarefa)

@@ -1,3 +1,20 @@
+const talentos = [{
+    "tipo": "kkkk",
+    "nome": "bbb",
+    "introdução": "cccc",
+    "pre-requisito": "ddddd",
+    "custo": "eeeee",
+    "beneficio": "ffff",
+    "nota": "gggg",
+    "livro-referencia": "hhhhh"
+}]
+const lista = document.querySelector('[data-list]')
+const tarefa = document.createElement('li')
+tarefa.classList.add('task')
+const conteudo = `<p class="content">${talentos.nome}</p>`
+tarefa.innerHTML = conteudo
+
+lista.appendChild(tarefa)
 const criarTarefa = (evento) => {
 
     evento.preventDefault() /* 1*/

@@ -1,5 +1,5 @@
 const talentos = [{
-    tipo: "kkkk",
+    tipo: 'kkkk',
     "nome": "bbb",
     "introdução": "cccc",
     "pre-requisito": "ddddd",

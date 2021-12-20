@@ -1,29 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme&amp;family=Space+Mono&amp;display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <title>Ceep</title>
-</head>
-<body>
-  <div class="app">
-    <div class="todo-list">
-      <h1 class="title">
-        Ceep
-      </h1>
-      
-      <form class="form" action="">
-        <input class="form-input" type="text" data-form-input>
-        <button class="form-button" data-form-button> Novo Item </button>
-      </form>
 
-      <ul class="list" data-list>
-        
-      </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="app" id="app">
+        <div class="ano">
+            <div class="mes" data-mes>Mes</div>
+            <div class="conjunto">
+                <div class="semana">Segunda-Feira</div>
+                <div class="semana">Terça-Feira</div>
+                <div class="semana">Quarta-Feira</div>
+                <div class="semana">Quinta-Feira</div>
+                <div class="semana">Sexta-Feira</div>
+                <div class="semana">Sabádo</div>
+                <div class="semana">Domingo</div>
+
+                <div class="dia">1</div>
+
+
+            </div>
+        </div>
+        <div class="msg">Oi</div>
     </div>
-    <script src="tasklist.js"></script>
+
 </body>
+
+<script>
+    let now = new Date()
+    const lista = document.querySelector('.conjunto')
+    const tarefa = document.createElement('div')
+    tarefa.classList.add('dia')
+
+
+    const conteudo = now.getDate()
+    tarefa.innerHTML = conteudo
+    lista.appendChild(tarefa)
+
+    let msgs = document.querySelector('.msg')
+
+
+
+    const dias = 24
+    const passagem = 11
+    let valorTotal = passagem * dias
+    let now2 = new Date()
+    let day = 1
+    let month = 11
+    const teste = []
+    contador = now.getDate()
+    const meses = ["Janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+    const semana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabádo", ]
+    const mes = meses[now.getMonth()];
+    const dia = semana[now.getDay()]
+    let msg
+    for (let i = 0; i < contador; i++) {
+        now.setFullYear(2021, 11, day);
+        let hoje = now.getDay()
+        let noite = semana[hoje]
+        if (hoje != 0 && hoje != 6) {
+            valorTotal = valorTotal - passagem
+        }
+        console.log(` Hoje é ${noite} dia ${day} de ${mes} de ${now.getUTCFullYear()} e o valor que vai sobrar em dinheiro é R$ ${valorTotal},00 `)
+        msgs.textContent = (` Hoje é ${noite} dia ${day} de ${mes} de ${now.getUTCFullYear()} e o valor que vai sobrar em dinheiro é R$ ${valorTotal},00 `)
+
+        day = day + 1
+    }
+</script>
+
 </html>

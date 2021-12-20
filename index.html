@@ -11,7 +11,7 @@
 <body>
     <div class="app" id="app">
         <div class="ano">
-            <div class="mes" data-mes>Mes</div>
+            <div class="mes" data-mes></div>
             <div class="conjunto">
                 <div class="semana">Segunda-Feira</div>
                 <div class="semana">Terça-Feira</div>
@@ -33,6 +33,11 @@
 
 <script>
     let now = new Date()
+    const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+    const semana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabádo", ]
+    let mesAtual = document.querySelector('.mes')
+    mesAtual.textContent = meses[now.getMonth()]
+    let msgs = document.querySelector('.msg')
     const lista = document.querySelector('.conjunto')
     const tarefa = document.createElement('div')
     tarefa.classList.add('dia')
@@ -42,7 +47,7 @@
     tarefa.innerHTML = conteudo
     lista.appendChild(tarefa)
 
-    let msgs = document.querySelector('.msg')
+
 
 
 
@@ -54,8 +59,6 @@
     let month = 11
     const teste = []
     contador = now.getDate()
-    const meses = ["Janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
-    const semana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabádo", ]
     const mes = meses[now.getMonth()];
     const dia = semana[now.getDay()]
     let msg
